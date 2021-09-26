@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "removeComments": true,
+    "sourceMap": true,
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules/**/*",
+    ".vscode/**/*"
+  ]
+}
