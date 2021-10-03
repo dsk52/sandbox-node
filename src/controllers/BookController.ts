@@ -1,9 +1,9 @@
 import * as express from "express";
 
-export function BookList(req: express.Request, res: express.Response) {
+export function BookList(res: express.Response) {
   const books = [];
 
   return res.json({
-    'books': books
-  })
+    books,
+  });
 }

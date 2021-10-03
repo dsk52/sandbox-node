@@ -9,5 +9,5 @@ export class Book extends BaseEntity {
   title: string;
 
   @Column()
-  publish_date: Date;
+  publishDate: Date;
 }

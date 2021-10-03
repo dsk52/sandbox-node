@@ -7,11 +7,16 @@
   "scripts": {
     "build": "tsc",
     "typeorm": "./node_modules/.bin/typeorm",
-    "dev": "nodemon --exec ts-node src/app.ts"
+    "dev": "nodemon --exec ts-node src/app.ts",
+    "lint": "./node_modules/.bin/eslint ./src/**/*.ts",
+    "lint:fix": "./node_modules/.bin/eslint ./src/**/*.ts && prettier --write ./src/**/*.ts"
   },
   "keywords": [],
   "author": "Daisuke KONISHI",
   "license": "MIT",
+  "engines": {
+    "node": "14"
+  },
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
@@ -20,12 +25,16 @@
     "typeorm": "0.2.37"
   },
   "devDependencies": {
+    "@types/eslint": "^7.28.0",
     "@types/express": "^4.17.13",
     "@types/node": "^8.0.29",
-    "@typescript-eslint/eslint-plugin": "^4.31.2",
-    "@typescript-eslint/parser": "^4.31.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-unused-imports": "^1.1.5",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "ts-node": "^10.2.1",
