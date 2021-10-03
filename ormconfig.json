@@ -1,0 +1,25 @@
+{
+  "type": "mysql",
+  "host": "0.0.0.0",
+  "port": 3306,
+  "username": "root",
+  "password": "mysql",
+  "database": "book",
+  "synchronize": false,
+  "logging": false,
+  "maxQueryExecutionTime": 100,
+  "entities": [
+    "build/entity/**/*.js"
+  ],
+  "migrations": [
+    "build/db/migration/**/*.js"
+  ],
+  "subscribers": [
+    "build/subscriber/**/*.js"
+  ],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/db/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
