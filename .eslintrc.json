@@ -43,7 +43,29 @@
         ],
         "newlines-between": "always",
         "pathGroupsExcludedImportTypes": ["builtin"],
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "pathGroups": [
+          {
+            "pattern": "./libs/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./controllers/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./db/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./repositories/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ]
       }
     ]
   }

@@ -1,6 +1,8 @@
 import compression from "compression";
 import express from "express";
 
+import Logger from "./libs/logger";
+
 import { BookList } from "./controllers/BookController";
 import { Index } from "./controllers/IndexController";
 
@@ -20,5 +22,5 @@ app.use((req: express.Request, res: express.Response) =>
 
 app.listen(port, () =>
   // eslint-disable-next-line no-console
-  console.log(`Server is running. listening at http://0.0.0.0:${port}`)
+  Logger.info(`Server is running. listening at http://0.0.0.0:${port}`)
 );
