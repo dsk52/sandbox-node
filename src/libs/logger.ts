@@ -1,4 +1,7 @@
+import path from "path";
+
 import winston from "winston";
+import DailyRotateFile from "winston-daily-rotate-file";
 
 const levels = {
   error: 0,
@@ -33,13 +36,25 @@ const format = winston.format.combine(
   )
 );
 
+const logDir = "../../logs/";
+
 const transports = [
   new winston.transports.Console(),
-  new winston.transports.File({
-    filename: "logs/error.log",
+  new DailyRotateFile({
+    filename: path.join(__dirname, logDir, "error-%DATE%.log"),
+    datePattern: "YYYY-MM-DD-HH",
+    zippedArchive: true,
+    maxSize: "20m",
+    maxFiles: 5,
     level: "error",
   }),
-  new winston.transports.File({ filename: "logs/application.log" }),
+  new DailyRotateFile({
+    filename: path.join(__dirname, logDir, "application-%DATE%.log"),
+    datePattern: "YYYY-MM-DD-HH",
+    zippedArchive: true,
+    maxSize: "20m",
+    maxFiles: 5,
+  }),
 ];
 
 const Logger = winston.createLogger({
