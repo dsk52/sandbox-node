@@ -1,9 +1,10 @@
 import compression from "compression";
 import express from "express";
 
+import Logger from "./libs/logger";
+
 import { BookList } from "./controllers/BookController";
 import { Index } from "./controllers/IndexController";
-import Logger from "./libs/logger";
 
 const app = express();
 const port = 3001;
