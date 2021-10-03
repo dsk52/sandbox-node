@@ -1,22 +1,15 @@
 {
+  "include": ["src/**/*"],
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
+    "target": "es5",
     "experimentalDecorators": true,
-    "preserveConstEnums": true,
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true,
-    "rootDir": "./",
-    "outDir": "./dist",
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
     "moduleResolution": "node",
-    "target": "esnext",
-    "removeComments": true,
-    "sourceMap": true,
-    "types": [
-      "node"
-    ]
-  },
-  "exclude": [
-    "node_modules/**/*",
-    ".vscode/**/*"
-  ]
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true
+  }
 }
