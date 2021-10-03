@@ -3,6 +3,7 @@ import express from "express";
 
 import { BookList } from "./controllers/BookController";
 import { Index } from "./controllers/IndexController";
+import Logger from "./libs/logger";
 
 const app = express();
 const port = 3001;
@@ -20,5 +21,5 @@ app.use((req: express.Request, res: express.Response) =>
 
 app.listen(port, () =>
   // eslint-disable-next-line no-console
-  console.log(`Server is running. listening at http://0.0.0.0:${port}`)
+  Logger.info(`Server is running. listening at http://0.0.0.0:${port}`)
 );
