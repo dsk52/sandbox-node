@@ -8,6 +8,6 @@ export class Book extends BaseEntity {
   @Column()
   title: string;
 
-  @Column()
+  @Column({ name: "publish_date" })
   publishDate: Date;
 }
