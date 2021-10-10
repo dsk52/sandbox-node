@@ -1,6 +1,6 @@
 import type express from "express";
 
-export function BookList(res: express.Response) {
+export function BookList(req: express.Request, res: express.Response) {
   const books = [];
 
   return res.json({
