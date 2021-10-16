@@ -11,7 +11,7 @@ export const connection = async () => {
       username: "root",
       password: "mysql",
       database: "book",
-      entities: [path.join(__dirname, "/../entities/**/*.ts")],
+      entities: [path.join(__dirname, "/../entity/**/*{.ts|.js}")],
       synchronize: true,
     });
   } catch (error) {
