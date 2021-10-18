@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*", "@types/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
     "target": "es6",
     "experimentalDecorators": true,
@@ -11,5 +11,6 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "skipLibCheck": true
-  }
+  },
+  "files": ["@types/global.d.ts"]
 }
