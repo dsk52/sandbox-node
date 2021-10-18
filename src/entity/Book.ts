@@ -1,7 +1,7 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-class Book extends BaseEntity {
+@Entity("book")
+export class Book {
   @PrimaryGeneratedColumn()
   readonly id: number;
 
@@ -11,5 +11,3 @@ class Book extends BaseEntity {
   @Column({ name: "publish_date" })
   publishDate: Date;
 }
-
-export default Book;

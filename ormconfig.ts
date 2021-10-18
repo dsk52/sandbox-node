@@ -1,12 +1,12 @@
 import { ConnectionOptions } from "typeorm-seeding";
 
-const Config: ConnectionOptions = {
+const DBConfig: ConnectionOptions = {
   type: "mysql",
-  host: "0.0.0.0",
+  host: process.env.DB_HOST,
   port: 3306,
-  username: "root",
-  password: "mysql",
-  database: "book",
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   synchronize: false,
   logging: false,
   maxQueryExecutionTime: 100,
@@ -28,4 +28,4 @@ const Config: ConnectionOptions = {
   factories: ["src/db/factories/**/*.ts"],
 };
 
-export default Config;
+export default DBConfig;
