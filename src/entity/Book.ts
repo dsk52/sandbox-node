@@ -1,13 +1,13 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
-export class Book extends BaseEntity {
+@Entity("book")
+export class Book {
   @PrimaryGeneratedColumn()
   readonly id: number;
 
   @Column()
   title: string;
 
-  @Column()
+  @Column({ name: "publish_date" })
   publishDate: Date;
 }

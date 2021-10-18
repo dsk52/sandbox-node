@@ -1,20 +1,13 @@
-import path from "path";
+import { createConnection } from "typeorm-seeding";
 
-import { createConnection } from "typeorm";
+import DBConfig from "../../ormconfig";
 
-export const connection = async () => {
+export const DBConnection = async () => {
   try {
-    return await createConnection({
-      type: "mysql",
-      host: "localhost",
-      port: 3306,
-      username: "root",
-      password: "mysql",
-      database: "book",
-      entities: [path.join(__dirname, "/../entities/**/*.ts")],
-      synchronize: true,
-    });
+    return await createConnection(DBConfig);
   } catch (error) {
+    console.error(error);
+
     throw new Error("DB connection error");
   }
 };
