@@ -3,7 +3,7 @@ import express from "express";
 
 import Logger from "./libs/logger";
 
-import { BookList } from "./controllers/BookController";
+import { BookDetail, BookList } from "./controllers/BookController";
 import { Index } from "./controllers/IndexController";
 
 const app = express();
@@ -12,6 +12,8 @@ const port = 3001;
 app.use(compression({ level: 9 }));
 
 app.get("/books", BookList);
+app.get("/books/detail", BookDetail);
+
 app.get("/", Index);
 
 app.use((req: express.Request, res: express.Response) =>
